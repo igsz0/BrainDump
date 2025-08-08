@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores'
   import { onMount } from 'svelte'
-  import NoteEditor from '$lib/components/NoteEditor.svelte'
+  import NoteEditor from '$lib/Components/NoteEditor.svelte'
 
   let note = null
 
