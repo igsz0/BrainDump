@@ -32,7 +32,7 @@
 
 
 <main
-  class="min-h-screen bg-no-repeat bg-fixed bg-cover bg-center px-4 sm:px-6 py-12"
+  class="min-h-screen bg-no-repeat bg-fixed bg-cover bg-center px-4 sm:px-6 py-20"
   style="background-image: url('/GreenSantaClarav3.webp'); font-family: 'Inter', sans-serif;"
 >
 
@@ -53,7 +53,7 @@
       <ul class="space-y-1.5">
         {#each notes as note}
           <li
-            class="relative bg-white/70 backdrop-blur-sm border border-gray-300 rounded-lg px-4 py-3 shadow-sm hover:shadow-md transition duration-200 ease-in-out"
+            class="relative bg-white/85 backdrop-blur-sm border border-gray-300 rounded-lg px-4 py-3 shadow-sm hover:shadow-md transition duration-200 ease-in-out"
           >
             <button
               class="w-full text-left"
@@ -75,7 +75,9 @@
         {/each}
       </ul>
     {:else}
-      <p class="mt-10 text-center text-gray-700 text-lg italic max-w-md mx-auto">
+      <p 
+      style="font-family: inter;"
+      class="mt-10 text-center text-gray-700 text-lg italic max-w-md mx-auto">
         Looks like your brain is empty... for now.
        
       </p>
