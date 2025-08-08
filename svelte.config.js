@@ -1,6 +1,13 @@
-import adapter from '@sveltejs/adapter-auto';
+// svelte.config.js
+import adapter from '@sveltejs/adapter-static';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = { kit: { adapter: adapter() } };
-
-export default config;
+export default {
+  kit: {
+    adapter: adapter({
+      fallback: 'index.html'
+    }),
+    prerender: {
+      entries: ['*'] // importante para que exporte todas las rutas encontradas
+    }
+  }
+};
