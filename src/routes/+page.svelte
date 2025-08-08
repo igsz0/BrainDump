@@ -33,7 +33,7 @@
 
 <main
   class="min-h-screen bg-no-repeat bg-fixed bg-cover bg-center px-4 sm:px-6 py-20"
-  style="background-image: url('/GreenSantaClarav3.webp'); font-family: 'Inter', sans-serif;"
+  style="background-image: url('/GreenSantaClarav4.webp'); font-family: 'Inter', sans-serif;"
 >
 
   <div class="max-w-2xl mx-auto space-y-6">
