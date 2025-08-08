@@ -9,7 +9,7 @@ It’s instant, distraction-free, and made for moments when you just need to **d
 
 ---
 
-##Why BrainDump?
+## Why BrainDump?
 
 Unlike heavy tools like Notion or Evernote, **BrainDump is designed for raw speed and simplicity**:
 
