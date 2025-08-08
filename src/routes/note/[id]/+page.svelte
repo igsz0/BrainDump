@@ -5,7 +5,7 @@
 
   let note = null
 
-  // Accede a la store directamente
+
   $: id = $page.params.id
 
   onMount(() => {
