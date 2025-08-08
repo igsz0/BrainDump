@@ -25,7 +25,7 @@ Unlike heavy tools like Notion or Evernote, **BrainDump is designed for raw spee
 
 ---
 
-## 🔧 Features
+## Features
 
 - Local-first note taking (no account needed)
 - Beautiful, responsive UI
@@ -42,14 +42,14 @@ Unlike heavy tools like Notion or Evernote, **BrainDump is designed for raw spee
 ---
 
 
-## 🛠️ Tech Stack
+## Tech Stack
 SvelteKit
 Tailwindcss
 Vercel for deployment
 
 ---
 
-## 🛠 Setup
+## Setup
 
 Use it on: https://braindump-pi-eight.vercel.app/
 
