@@ -1,72 +1,85 @@
 <script>
-	import NoteInput from '$lib/Components/NoteInput.svelte'
-	import { onMount } from 'svelte'
-	import { goto } from '$app/navigation'
+    import Icon from "heroicons-for-svelte"
+	import { Trash as OutlineTrash } from "heroicons-for-svelte/icons/outline"
 
-	let notes = []
+  import NoteInput from '$lib/Components/NoteInput.svelte'
+  import { onMount } from 'svelte'
+  import { goto } from '$app/navigation'
+  
 
-	onMount(() => {
-		const saved = localStorage.getItem('notes')
-		notes = saved ? JSON.parse(saved) : []
-	})
+  let notes = []
 
-	function openNote(id) {
-		goto(`/note/${id}`)
-	}
+  onMount(() => {
+    const saved = localStorage.getItem('notes')
+    notes = saved ? JSON.parse(saved) : []
+  })
 
-    function deleteNote(id) {
-//   const confirmed = confirm('¿Estás seguro de que quieres borrar esta nota?')
-//   if (!confirmed) return
+  function openNote(id) {
+    goto(`/note/${id}`)
+  }
 
-  notes = notes.filter(n => n.id !== id)
-  localStorage.setItem('notes', JSON.stringify(notes))
-}
-
-
+  function deleteNote(id) {
+    notes = notes.filter(n => n.id !== id)
+    localStorage.setItem('notes', JSON.stringify(notes))
+  }
 </script>
 
-<div class="bg-white p-3 h-screen box-border">
-  <div
-    class="h-full w-full rounded-[5px] bg-cover bg-fixed bg-no-repeat flex flex-col"
-    style="background-image: url('/GreenSantaClarav2.webp');"
-  >
-  <div class="flex-1 overflow-auto px-6 py-6">
-	
-    <div class="mb-10">
-		<img src="/CompleteLogov4.webp" alt="Logo" class="drop-shadow-[0_3px_3px_rgba(0,0,0,0.3)] h-40 mx-auto mb-4"/>
-		<p class="text-center text-[#37352f] font-[inter]">What ya thinkin’</p>
-	</div>
+<style>
+	:global(.icon) {
+		font-size: 3rem;
+	}
+</style>
 
-	<NoteInput/>
 
-	{#if notes.length > 0}
-		<ul class="mt-8 space-y-3">
-			{#each notes as note}
-  <li class="relative group bg-white/90 border-[#d0d0d0] backdrop-blur-md p-4 border-[1.25px] rounded-[5px]">
-    <button
-  class="w-full text-left cursor-pointer"
-  on:click={() => openNote(note.id)}
-  aria-label="Open note"
+<main
+  class="min-h-screen bg-no-repeat bg-fixed bg-cover bg-center px-4 sm:px-6 py-12"
+  style="background-image: url('/GreenSantaClarav3.webp'); font-family: 'Inter', sans-serif;"
 >
-  <h2 class="font-semibold text-lg text-[#37352f]">{note.title}</h2>
-</button>
+
+  <div class="max-w-2xl mx-auto space-y-6">
+    
 
 
-    <button
-      class="absolute top-3 right-2 btn-gray text-[#37352f]"
-      style=""
-      on:click|stopPropagation={() => deleteNote(note.id)}
-      aria-label="Delete note"
-    >
-      🗑
-    </button>
-  </li>
-{/each}
+    <div class="text-center mb-4">
+      <img src="/CompleteLogov4.webp" alt="Logo" class="h-36 mx-auto drop-shadow-md mb-2" />
+      <p class="text-gray-700 text-lg">What ya thinkin’</p>
+    </div>
 
-		</ul>
-	{:else}
-		<p class="mt-10 text-center text-[#37352f]">Looks like your brain is empty... for now.</p>
-	{/if}
-    </div>
-    </div>
-    </div>
+
+    <NoteInput onNoteCreated={(newNote) => notes = [newNote, ...notes]} />
+
+
+    {#if notes.length > 0}
+      <ul class="space-y-1.5">
+        {#each notes as note}
+          <li
+            class="relative bg-white/70 backdrop-blur-sm border border-gray-300 rounded-lg px-4 py-3 shadow-sm hover:shadow-md transition duration-200 ease-in-out"
+          >
+            <button
+              class="w-full text-left"
+              on:click={() => openNote(note.id)}
+              aria-label="Open note"
+            >
+              <h2 class="text-gray-800 font-medium text-base truncate">{note.title}</h2>
+            </button>
+
+            <button
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-500 transition"
+              on:click|stopPropagation={() => deleteNote(note.id)}
+              aria-label="Delete note"
+            >
+
+              <Icon icon={OutlineTrash} style="font-size: 24px" />
+            </button>
+          </li>
+        {/each}
+      </ul>
+    {:else}
+      <p class="mt-10 text-center text-gray-700 text-lg italic max-w-md mx-auto">
+        Looks like your brain is empty... for now.
+       
+      </p>
+    {/if}
+
+  </div>
+</main>

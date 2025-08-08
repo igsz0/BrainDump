@@ -15,5 +15,5 @@
 }
 
 .btn-gray {
-    @apply bg-[#ffffff] text-[#37352f] border-[1.25px] border-[#d0d0d0] rounded-[5px] px-3 py-2 text-sm font-sans cursor-pointer text-center no-underline inline-block transition-colors duration-200 ease-in-out shadow-none outline-none hover:bg-[#e6e6e6] hover:border-[#d0d0d0] active:bg-[#dcdcdc] active:border-[#c0c0c0]
+    @apply bg-[#ffffff] text-[#37352f] border-[1.25px] border-[#d0d0d0] rounded-lg px-3 py-2 text-sm font-sans cursor-pointer text-center no-underline inline-block transition-colors duration-200 ease-in-out shadow-none outline-none hover:bg-[#e6e6e6] hover:border-[#d0d0d0] active:bg-[#dcdcdc] active:border-[#c0c0c0]
 }

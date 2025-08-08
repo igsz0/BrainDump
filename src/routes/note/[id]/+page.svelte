@@ -15,7 +15,7 @@
   })
 </script>
 
-<main class="p-15 bg-fixed min-h-screen w-full bg-no-repeat bg-center bg-cover" style="background-image: url('/HackMePlzBackgroundv3.webp');">
+<main class="p-15 bg-fixed min-h-screen w-full bg-no-repeat bg-center bg-cover" style="background-image: url('/GreenSantaClarav2.webp');">
 {#if note}
   <NoteEditor {note} />
 {:else}

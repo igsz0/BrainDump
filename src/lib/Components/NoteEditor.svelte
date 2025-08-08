@@ -50,7 +50,7 @@
 </script>
 
 <div>
-  <div class="w-full p-3 border-[1.25px] rounded-[5px] bg-[#ffffff]/100 backdrop-blur-md border-[#d0d0d0] mb-1">
+  <div class="w-full p-3 border-[1.25px] rounded-lg bg-[#ffffff]/100 backdrop-blur-md border-[#d0d0d0] mb-1">
     <h1
     style="font-family: inter;"
     class="text-2xl font-bold text-[#37352f]">{note.title}</h1>
@@ -59,7 +59,7 @@
   <textarea
     placeholder="Start typing..."
     style="font-family: inter;"
-    class="w-full mb-1 focus:outline-[#c0c0c0] focus:outline-[1px] overflow-hidden resize-none p-4 border-[1.25px] rounded-[5px] bg-[#ffffff]/70 backdrop-blur-md border-gray-300"
+    class="w-full mb-1 focus:outline-[#c0c0c0] focus:outline-[1px] overflow-hidden resize-none p-4 border-[1.25px] rounded-lg bg-[#ffffff]/70 backdrop-blur-md border-gray-300"
     bind:value={note.content}
     on:input={updateContent}>
 </textarea>

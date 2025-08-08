@@ -29,10 +29,11 @@
 </script>
 
 <input
-  type="text"
-  bind:value={title}
+  placeholder="New note title..."
+  class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white/100 backdrop-blur text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 transition"
+  style="font-family: 'Inter', sans-serif;"
+    bind:value={title}
   on:keydown={(e) => e.key === 'Enter' && createNote()}
-  placeholder="new note title"
-  style="font-family: inter;"
-  class=" w-full focus:outline-[#c0c0c0] focus:outline-[1px] overflow-hidden resize-none p-4 border-[1.25px] rounded-[5px] bg-[#ffffff]/65 backdrop-blur-md border-gray-300 "
 />
+
+
