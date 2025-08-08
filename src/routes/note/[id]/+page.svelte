@@ -19,7 +19,7 @@
 {#if note}
   <NoteEditor {note} />
 {:else}
-  <p>Nota no encontrada</p>
+  <p>Note not found please reload page</p>
 {/if}
 </main>
 
